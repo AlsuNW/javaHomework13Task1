@@ -28,8 +28,11 @@ public class ShopRepositoryTest {
         repo.add(product1);
         repo.add(product2);
 
+        repo.removeById(5);
+
         Product[] expected = {product2};
-        Product[] actual = repo.removeById(5);
+        Product[] actual = repo.findAll();
+
         Assertions.assertArrayEquals(expected, actual);
     }
 
